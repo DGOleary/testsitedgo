@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body style="background-color:black;">
+        <p style="color:yellow;font-size:100px"> <br><br><br><br><br><br><br><br><br><br><br><br> </p>
+    <p id="crawl" style="color:yellow;font-size:100px;text-align:center"> </p>
+    <script src="swapi.js"></script>
+    <script>
+async function getName(){
+//let temp = await swapiModule.getFilm(1);
+let temp = await fetch("https://swapi.dev/api/films/1/");
+//JSON.parse(obj);
+temp=await temp.json();
+//console.log(typeof(temp));
+//console.log(temp);
+let obj=temp.opening_crawl;
+obj=obj.replaceAll("\n","<br>")
+document.getElementById("crawl").innerHTML=obj;
+//alert(obj);
+console.log(obj);
+}
+
+function pageScroll() {
+    window.scrollBy(0,1);
+    setTimeout(pageScroll,10);
+}
+
+getName();
+window.scrollTo(0,0);
+pageScroll();
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>LOOOOOOOOOOOL</h1>
+        <p>welcome to the lol site</p>
+        <input type="text" placeholder="Type something funny" id="myInput">
+        <button type="button" onclick="getInputValue();">Get Value</button>
+        <script src="swapi.js"></script>
+        <script>
+async function getName(){
+    let temp = await swapiModule.getFilm(1);
+    let obj=temp.opening_crawl;
+    console.log(obj);
+}
+
+getName();
+        </script>
+    </head>
+</html>
